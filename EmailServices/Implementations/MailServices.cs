@@ -8,7 +8,8 @@ namespace EmailServices.Implementations
 {
     internal class MailServices : IMailServices
     {
-        public MailServices(IOptions<MailSettingsModel> mailSettings) => _mailSettings = mailSettings.Value;
+        public MailServices(IOptions<MailSettingsModel> mailSettings) =>
+            _mailSettings = mailSettings.Value;
 
         private readonly MailSettingsModel _mailSettings;
 
