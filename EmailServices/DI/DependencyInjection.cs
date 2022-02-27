@@ -8,6 +8,11 @@ namespace EmailServices.DI
 {
     public static class DependencyInjection
     {
+        /// <summary>
+        /// make the necessary injections
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="configuration"></param>
         public static void AddEmailServices(this IServiceCollection services, IConfiguration configuration)
         {
             VerifyMailSettings(configuration);
