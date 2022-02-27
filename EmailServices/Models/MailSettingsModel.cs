@@ -1,6 +1,6 @@
 ﻿namespace EmailServices.Models
 {
-    public class MailSettingsModel
+    internal class MailSettingsModel
     {
         public string From { get; set; }
         public string UserName { get; set; }
