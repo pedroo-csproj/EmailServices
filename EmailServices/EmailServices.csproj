@@ -13,6 +13,7 @@
 		<NeutralLanguage>en</NeutralLanguage>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<Description>EmailServices is a library to facility the email sending in .Net projects.</Description>
+		<PackageId>Octasharp.EmailServices</PackageId>
 	</PropertyGroup>
 
 	<ItemGroup>
