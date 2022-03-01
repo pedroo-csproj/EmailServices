@@ -30,6 +30,18 @@ You can see more ways to install **EmailServices** in your project [here](https:
 
 ## Implementing
 
+### Add MailSettings in appsettings
+
+```sh
+"MailSettings": {
+    "UserName": "", // email address
+    "From": "", // email address that will be displayed to receiver
+    "Password": "", // email password
+    "Host": "", // email host
+    "Port": 0 // email port
+}
+```
+
 ### Add DI Namespace
 
 ```sh
