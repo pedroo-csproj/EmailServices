@@ -14,6 +14,7 @@ namespace EmailServices.Interfaces
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
         Task SendAsync(MailRequestModel mailRequest, CancellationToken cancellationToken);
+
         /// <summary>
         /// send a email
         /// </summary>

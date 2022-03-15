@@ -16,10 +16,12 @@
         /// address receiving the email
         /// </summary>
         public string To { get; private set; }
+
         /// <summary>
         /// subject of email
         /// </summary>
         public string Subject { get; private set; }
+
         /// <summary>
         /// email body, accepts html
         /// </summary>
