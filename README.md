@@ -42,6 +42,16 @@ You can see more ways to install **EmailServices** in your project [here](https:
 }
 ```
 
+or
+
+```sh
+"EMAIL_USERNAME": "", // email address
+"EMAIL_FROM": "", // email address that will be displayed to receiver
+"EMAIL_PASSWORD": "", // email password
+"EMAIL_HOST": "", // email host
+"EMAIL_PORT": 0 // email port
+```
+
 ### Add DI Namespace
 
 ```sh
