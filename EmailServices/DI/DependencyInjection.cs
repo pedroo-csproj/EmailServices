@@ -17,27 +17,27 @@ namespace EmailServices.DI
         {
             VerifyMailSettings(configuration);
 
-            services.Configure<MailSettingsModel>(configuration.GetSection("MailSettings"));
+            services.AddTransient<MailSettingsModel>();
 
             services.AddTransient<IMailServices, MailServices>();
         }
 
         private static void VerifyMailSettings(IConfiguration configuration)
         {
-            if (string.IsNullOrEmpty(configuration.GetSection("MailSettings:UserName").Value))
-                throw new Exception("You must configure the MailSettings:UserName");
+            if (string.IsNullOrEmpty(configuration.GetSection("MailSettings:UserName").Value) && string.IsNullOrEmpty(configuration.GetSection("EMAIL_USERNAME").Value))
+                throw new Exception("You must configure MailSettings:UserName or EMAIL_USERNAME");
 
-            if (string.IsNullOrEmpty(configuration.GetSection("MailSettings:From").Value))
-                throw new Exception("You must configure the MailSettings:From");
+            if (string.IsNullOrEmpty(configuration.GetSection("MailSettings:From").Value) && string.IsNullOrEmpty(configuration.GetSection("EMAIL_FROM").Value))
+                throw new Exception("You must configure MailSettings:From or EMAIL_FROM");
 
-            if (string.IsNullOrEmpty(configuration.GetSection("MailSettings:Password").Value))
-                throw new Exception("You must configure the MailSettings:Password");
+            if (string.IsNullOrEmpty(configuration.GetSection("MailSettings:Password").Value) && string.IsNullOrEmpty(configuration.GetSection("EMAIL_PASSWORD").Value))
+                throw new Exception("You must configure MailSettings:Password or EMAIL_PASSWORD");
 
-            if (string.IsNullOrEmpty(configuration.GetSection("MailSettings:Host").Value))
-                throw new Exception("You must configure the MailSettings:Host");
+            if (string.IsNullOrEmpty(configuration.GetSection("MailSettings:Host").Value) && string.IsNullOrEmpty(configuration.GetSection("EMAIL_HOST").Value))
+                throw new Exception("You must configure MailSettings:Host or EMAIL_HOST");
 
-            if (string.IsNullOrEmpty(configuration.GetSection("MailSettings:Port").Value))
-                throw new Exception("You must configure the MailSettings:Port");
+            if (string.IsNullOrEmpty(configuration.GetSection("MailSettings:Port").Value) && string.IsNullOrEmpty(configuration.GetSection("EMAIL_PORT").Value))
+                throw new Exception("You must configure MailSettings:Port or EMAIL_PORT");
         }
     }
 }

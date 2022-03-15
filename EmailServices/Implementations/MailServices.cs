@@ -1,6 +1,5 @@
 ﻿using EmailServices.Interfaces;
 using EmailServices.Models;
-using Microsoft.Extensions.Options;
 using System.Net;
 using System.Net.Mail;
 
@@ -8,8 +7,8 @@ namespace EmailServices.Implementations
 {
     internal class MailServices : IMailServices
     {
-        public MailServices(IOptions<MailSettingsModel> mailSettings) =>
-            _mailSettings = mailSettings.Value;
+        public MailServices(MailSettingsModel mailSettings) =>
+            _mailSettings = mailSettings;
 
         private readonly MailSettingsModel _mailSettings;
 
